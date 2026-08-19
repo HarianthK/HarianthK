@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="Harianth Kalavala, AI Engineer. Retrieval systems, knowledge graphs, agents.">
+  <title>Harianth Kalavala — AI Engineer</title>
+
+  <defs>
+    <filter id="bloom" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b1"/>
+      <feGaussianBlur stdDeviation="18" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softbloom" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="s1"/>
+      <feMerge>
+        <feMergeNode in="s1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <radialGradient id="vign" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#1a130c"/>
+      <stop offset="100%" stop-color="#0a0704"/>
+    </radialGradient>
+
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f2b54a" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#f2b54a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#df8352" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .node { animation: pulse 4.6s ease-in-out infinite; transform-origin: center; }
+    .n2 { animation-duration: 5.8s; animation-delay: -1.2s; }
+    .n3 { animation-duration: 3.6s; animation-delay: -2.4s; }
+    .n4 { animation-duration: 6.2s; animation-delay: -0.6s; }
+    .n5 { animation-duration: 5.1s; animation-delay: -3.1s; }
+    .name { animation: breathe 6s ease-in-out infinite; }
+
+    @keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+    @keyframes breathe { 0%, 100% { fill-opacity: 0.86; } 50% { fill-opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .node, .name { animation: none; opacity: 0.85; fill-opacity: 1; }
+    }
+  </style>
+
+  <rect width="900" height="260" fill="url(#vign)"/>
+
+  <!-- Graph edges: the same motif the portfolio hero runs on. Both clusters stay
+       clear of x 165-735, which is where the name sits once it's set at 48px. -->
+  <g stroke="#f2b54a" stroke-opacity="0.16" stroke-width="1" fill="none">
+    <path d="M74 74 L142 128 L92 192"/>
+    <path d="M46 132 L142 128"/>
+    <path d="M74 74 L46 132"/>
+    <path d="M826 74 L758 128 L808 192"/>
+    <path d="M854 132 L758 128"/>
+    <path d="M826 74 L854 132"/>
+  </g>
+
+  <g filter="url(#softbloom)">
+    <circle class="node" cx="74" cy="74" r="4" fill="#f2b54a"/>
+    <circle class="node n2" cx="142" cy="128" r="6" fill="#df8352"/>
+    <circle class="node n3" cx="92" cy="192" r="3.5" fill="#39b4dd"/>
+    <circle cx="46" cy="132" r="3" fill="#f2b54a" opacity="0.7"/>
+    <circle class="node n4" cx="826" cy="74" r="3.5" fill="#df8352"/>
+    <circle class="node n5" cx="758" cy="128" r="6" fill="#f2b54a"/>
+    <circle cx="808" cy="192" r="3" fill="#39b4dd" opacity="0.75"/>
+    <circle cx="854" cy="132" r="3" fill="#f2b54a" opacity="0.55"/>
+  </g>
+
+  <g filter="url(#bloom)">
+    <text class="name" x="450" y="122" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" letter-spacing="1" fill="#f2b54a">HARIANTH KALAVALA</text>
+  </g>
+
+  <rect x="250" y="150" width="400" height="1" fill="url(#edge)"/>
+
+  <text x="450" y="182" text-anchor="middle" font-family="ui-monospace, Consolas, 'Courier New', monospace" font-size="15" letter-spacing="5" fill="#a59d92">AI ENGINEER</text>
+  <text x="450" y="212" text-anchor="middle" font-family="ui-monospace, Consolas, 'Courier New', monospace" font-size="12.5" letter-spacing="2.5" fill="#df8352">retrieval systems · knowledge graphs · agents</text>
+</svg>
