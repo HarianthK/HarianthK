@@ -13,14 +13,11 @@ I build retrieval systems that turn unstructured data into something production 
 <br />
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/HarianthK/HarianthK/output/snake.svg" alt="A snake eating my contribution graph" />
-</div>
-
-<br />
-
-<div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=HarianthK&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=f2b54a&icon_color=df8352&text_color=a59d92&ring_color=f2b54a" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HarianthK&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=f2b54a&text_color=a59d92" alt="Most used languages" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HarianthK/HarianthK/output/snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HarianthK/HarianthK/output/snake-light.svg" />
+    <img src="https://raw.githubusercontent.com/HarianthK/HarianthK/output/snake-dark.svg" alt="A snake eating my contribution graph" />
+  </picture>
 </div>
 
 <div align="center">

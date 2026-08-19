@@ -62,18 +62,37 @@ contents: write` in the workflow is necessary but not sufficient on its own.
 `color_dots` takes exactly five colours, lowest to highest. The `#` characters
 sit inside a YAML block scalar, so they are literal and not comments.
 
-## Stats cards
+## Stats cards — removed, and why
 
-Currently pointed at the public `github-readme-stats` instance. That deployment
-shares one 5k/hour GitHub API quota across every user of it and returns 503
-during busy periods — the broken image everyone eventually sees.
+The stats and top-languages cards shipped pointed at the public
+`github-readme-stats` instance and were returning **503 within hours**. That
+deployment shares one 5k/hour GitHub API quota across everyone using it, so this
+is its normal behaviour, not an outage. Two broken images is worse than no
+images, so both were pulled.
 
-Fix when it starts happening: fork `anuraghazra/github-readme-stats`, deploy to
-Vercel, add a `PAT_1` env var with a classic token, and swap the two
-`github-readme-stats.vercel.app` hostnames in the README for the new one.
+To add them back, self-host: fork `anuraghazra/github-readme-stats`, deploy to
+Vercel, add a `PAT_1` env var holding a classic token, then use your own
+hostname. Your own quota, renders reliably.
+
+Card URLs, kept here so they don't have to be rebuilt — swap in the new host:
+
+```
+<host>/api?username=HarianthK&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=f2b54a&icon_color=df8352&text_color=a59d92
+<host>/api/top-langs/?username=HarianthK&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=f2b54a&text_color=a59d92
+```
 
 `bg_color=00000000` is transparent — eight-digit hex, alpha last. That is what
 lets the cards sit on GitHub's own background in either theme.
+
+## Light theme is half the audience
+
+A README renders in the *viewer's* theme, not the author's. The first version of
+the snake used a near-black empty cell, which on a light-theme profile drew the
+whole contribution grid as a solid block of black squares.
+
+Anything with a baked background now ships as two files behind a `<picture>`
+with `prefers-color-scheme`. The header is the deliberate exception: it paints
+its own dark ground and reads as an intentional card on either theme.
 
 ## Deliberately not here
 
