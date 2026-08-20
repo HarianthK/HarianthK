@@ -2,7 +2,7 @@
 
 ## What this repo is
 
-`HarianthK/HarianthK` — a repo named after the account, so GitHub renders its
+`HarianthK/HarianthK`, a repo named after the account, so GitHub renders its
 README at the top of the profile page. That naming is the entire mechanism;
 there is no setting to switch on.
 
@@ -29,13 +29,13 @@ If the portfolio palette ever changes, these are the copies that go stale.
 
 ## Why the header is hand-written SVG
 
-The glowing headers going around are not a widget — there is no service that
+The glowing headers going around are not a widget. There is no service that
 produces one. They are SVG committed to the repo. GitHub strips inline `<svg>`
 from Markdown, so it has to be referenced as `<img src="assets/header.svg">`,
 and inside an `<img>` an SVG gets no JavaScript and no external resources.
 
 What does survive: CSS animations, `@keyframes`, and filter primitives. The glow
-is `feGaussianBlur` at two radii merged back over the source via `feMerge` —
+is `feGaussianBlur` at two radii merged back over the source via `feMerge`:
 a wide soft halo plus a tight one, which reads as bloom rather than blur.
 
 Animation uses CSS rather than SMIL specifically so `prefers-reduced-motion`
@@ -62,7 +62,7 @@ contents: write` in the workflow is necessary but not sufficient on its own.
 `color_dots` takes exactly five colours, lowest to highest. The `#` characters
 sit inside a YAML block scalar, so they are literal and not comments.
 
-## Stats cards — removed, and why
+## Stats cards: removed, and why
 
 The stats and top-languages cards shipped pointed at the public
 `github-readme-stats` instance and were returning **503 within hours**. That
@@ -74,14 +74,14 @@ To add them back, self-host: fork `anuraghazra/github-readme-stats`, deploy to
 Vercel, add a `PAT_1` env var holding a classic token, then use your own
 hostname. Your own quota, renders reliably.
 
-Card URLs, kept here so they don't have to be rebuilt — swap in the new host:
+Card URLs, kept here so they don't have to be rebuilt. Swap in the new host:
 
 ```
 <host>/api?username=HarianthK&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=f2b54a&icon_color=df8352&text_color=a59d92
 <host>/api/top-langs/?username=HarianthK&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=f2b54a&text_color=a59d92
 ```
 
-`bg_color=00000000` is transparent — eight-digit hex, alpha last. That is what
+`bg_color=00000000` is transparent, eight-digit hex with alpha last. That is what
 lets the cards sit on GitHub's own background in either theme.
 
 ## Light theme is half the audience
