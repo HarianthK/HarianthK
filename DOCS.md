@@ -62,27 +62,35 @@ contents: write` in the workflow is necessary but not sufficient on its own.
 `color_dots` takes exactly five colours, lowest to highest. The `#` characters
 sit inside a YAML block scalar, so they are literal and not comments.
 
-## Stats cards: removed, and why
+## Every hosted widget died. None are left.
 
-The stats and top-languages cards shipped pointed at the public
-`github-readme-stats` instance and were returning **503 within hours**. That
-deployment shares one 5k/hour GitHub API quota across everyone using it, so this
-is its normal behaviour, not an outage. Two broken images is worse than no
-images, so both were pulled.
+All three third-party widgets failed within a day of going live, for two
+different reasons, which is the point: each one is a single person's free-tier
+Vercel deployment that the whole internet shares.
 
-To add them back, self-host: fork `anuraghazra/github-readme-stats`, deploy to
-Vercel, add a `PAT_1` env var holding a classic token, then use your own
-hostname. Your own quota, renders reliably.
+| Widget | Failure |
+| --- | --- |
+| github-readme-stats | HTTP 503, shared 5k/hour API quota exhausted |
+| top-langs (same host) | HTTP 503, same cause |
+| github-readme-activity-graph | HTTP 402, `DEPLOYMENT_DISABLED`, deployment switched off |
+
+All three are gone from the README. What remains renders from this repo alone:
+the header committed here, and the snake on the `output` branch. Nothing on the
+page can now break because somebody else's Vercel bill went unpaid.
+
+To bring any of them back, self-host it. Fork the project, deploy to your own
+Vercel, add a `PAT_1` env var holding a classic token, then use your hostname.
 
 Card URLs, kept here so they don't have to be rebuilt. Swap in the new host:
 
 ```
 <host>/api?username=HarianthK&show_icons=true&include_all_commits=true&hide_border=true&bg_color=00000000&title_color=f2b54a&icon_color=df8352&text_color=a59d92
 <host>/api/top-langs/?username=HarianthK&layout=compact&langs_count=6&hide_border=true&bg_color=00000000&title_color=f2b54a&text_color=a59d92
+<host>/graph?username=HarianthK&bg_color=00000000&color=a59d92&title_color=f2b54a&line=f2b54a&point=df8352&area=true&hide_border=true
 ```
 
 `bg_color=00000000` is transparent, eight-digit hex with alpha last. That is what
-lets the cards sit on GitHub's own background in either theme.
+lets a card sit on GitHub's own background in either theme.
 
 ## Light theme is half the audience
 
@@ -106,5 +114,3 @@ hides signal, and the custom header already does the job a typing SVG would.
   take a few minutes to show the change; a hard refresh usually does it.
 - Animated SVG through camo has been reported flaky in some Firefox versions.
   The header degrades to a static frame rather than breaking.
-- The activity graph is the most decorative element on the page and the first
-  thing to cut if it ever reads as long.

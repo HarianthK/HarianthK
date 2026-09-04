@@ -20,10 +20,6 @@ I build retrieval systems that turn unstructured data into something production 
   </picture>
 </div>
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=HarianthK&bg_color=00000000&color=a59d92&title_color=f2b54a&line=f2b54a&point=df8352&area=true&area_color=f2b54a&hide_border=true&custom_title=Last%2031%20days" alt="Contribution activity over the last 31 days" />
-</div>
-
 <br />
 
 ### Selected work
