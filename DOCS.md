@@ -102,6 +102,21 @@ Anything with a baked background now ships as two files behind a `<picture>`
 with `prefers-color-scheme`. The header is the deliberate exception: it paints
 its own dark ground and reads as an intentional card on either theme.
 
+## What Selected work is for
+
+Each entry names one thing that can be checked by clicking it, not a feature
+list. The CHIP-8 entry says 86 of 103 programs ran wrong rather than that the
+emulator is complete, because coverage ages badly and the interesting claim is
+the one that could be wrong.
+
+The upstream section exists because a pull request into somebody else's project
+is the only item on the page that a stranger already trusts. It is also the
+shortest way to say what kind of testing I do: the suite was already passing,
+and the question was whether it could fail at all.
+
+Hobby repos stay described as what they are. They are not dressed up as work
+experience, and the job is covered in the opening paragraph instead.
+
 ## Deliberately not here
 
 Trophy case, streak counter, profile-view counter, tech-badge wall, typing-SVG
