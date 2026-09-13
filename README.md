@@ -38,6 +38,8 @@ I build retrieval systems that turn unstructured data into something production 
 
 Checking the emulator against [Timendus' CHIP-8 test suite](https://github.com/Timendus/chip8-test-suite) meant asking whether the suite could actually fail, so I broke instructions on purpose and watched which tests stayed quiet. Three bugs got through it. All three are now patches there, each one holding the screen pixel for pixel identical on a correct interpreter: [#35](https://github.com/Timendus/chip8-test-suite/pull/35), [#36](https://github.com/Timendus/chip8-test-suite/pull/36), [#37](https://github.com/Timendus/chip8-test-suite/pull/37).
 
+The same reading of programs found bugs in two other emulators, [kiwi-8](https://github.com/Diesel-Net/kiwi-8/pull/79) and [jaxe](https://github.com/kurtjd/jaxe/pull/29), each fixed with a headless harness around the real core so the fix could be checked against the suite. And a one-line [.gitattributes](https://github.com/JohnEarnest/chip8Archive/pull/37) that stops the CHIP-8 community archive reporting itself as 99% Roff, merged by John Earnest, the author of Octo and the archive.
+
 ### Elsewhere
 
 [harianthk.vercel.app](https://harianthk.vercel.app) · [LinkedIn](https://www.linkedin.com/in/harianthk/) · [hkalaval@asu.edu](mailto:hkalaval@asu.edu)
