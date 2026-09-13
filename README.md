@@ -30,7 +30,7 @@ I build retrieval systems that turn unstructured data into something production 
 
 **[Portfolio](https://github.com/HarianthK/Portfolio)** is my own work modelled as the kind of knowledge graph I build for a living. Next.js, TypeScript, a hand-rolled force layout. ([live](https://harianthk.vercel.app))
 
-**[CHIP-8](https://harianthk.github.io/chip8)** is an emulator for the 1970s virtual machine. Six of its instructions have two accepted readings, and 86 of the 103 programs in the community archive were quietly running the wrong one until it started reading what each program actually asks for. ([code](https://github.com/HarianthK/chip8))
+**[CHIP-8](https://harianthk.github.io/chip8)** is an emulator for the 1970s virtual machine. Six of its instructions have two accepted readings, and 86 of the 103 programs in the community archive were quietly running the wrong one until it started reading what each program actually asks for. It also reads any program back as Octo source, and all 104 in the archive compile back to the identical bytes through Octo's own compiler. ([code](https://github.com/HarianthK/chip8))
 
 **[Nibble](https://nibble-lang.vercel.app)** is a small language that compiles to CHIP-8 machine code. Write a program, press compile, and play it; the bytes shown under the screen are the real output and run on any interpreter. ([code](https://github.com/HarianthK/nibble))
 
