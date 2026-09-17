@@ -34,11 +34,19 @@ I build retrieval systems that turn unstructured data into something production 
 
 **[Nibble](https://nibble-lang.vercel.app)** is a small language that compiles to CHIP-8 machine code. Write a program, press compile, and play it; the bytes shown under the screen are the real output and run on any interpreter. ([code](https://github.com/HarianthK/nibble))
 
+**[Retrace](https://retrace-llm.vercel.app/?sample=1)** opens an OpenTelemetry trace of an LLM app and shows what it did: the calls as a tree, the conversation, the tool calls, the tokens. Reads the Python SDK's JSON, OTLP and Phoenix exports, no server. ([code](https://github.com/HarianthK/retrace))
+
+**[Upstream](https://upstream-prs.vercel.app/?user=HarianthK)** lists every pull request a GitHub user has sent to other people's projects and what became of each. The profile page counts everything; this answers the question that matters. ([code](https://github.com/HarianthK/upstream))
+
 ### Upstream
 
-Checking the emulator against [Timendus' CHIP-8 test suite](https://github.com/Timendus/chip8-test-suite) meant asking whether the suite could actually fail, so I broke instructions on purpose and watched which tests stayed quiet. Three bugs got through it. All three are now patches there, each one holding the screen pixel for pixel identical on a correct interpreter: [#35](https://github.com/Timendus/chip8-test-suite/pull/35), [#36](https://github.com/Timendus/chip8-test-suite/pull/36), [#37](https://github.com/Timendus/chip8-test-suite/pull/37).
+Thirty pull requests to twenty six maintainers in a week, six merged so far, each one a bug proved with a program before it was sent; [Upstream](https://upstream-prs.vercel.app/?user=HarianthK) keeps the live list.
 
-The same reading of programs found bugs in two other emulators, [kiwi-8](https://github.com/Diesel-Net/kiwi-8/pull/79) and [jaxe](https://github.com/kurtjd/jaxe/pull/29), each fixed with a headless harness around the real core so the fix could be checked against the suite. And a one-line [.gitattributes](https://github.com/JohnEarnest/chip8Archive/pull/37) that stops the CHIP-8 community archive reporting itself as 99% Roff, merged by John Earnest, the author of Octo and the archive.
+The most recent are in LLM observability, the tools around Arize's Phoenix: the Groq instrumentor in [OpenInference](https://github.com/Arize-ai/openinference/pull/3754) was dropping the reasoning that Groq's reasoning models return and their token details (merged the same day, the maintainer extended the branch himself before merging), and Mistral's reasoning models were losing their whole answer in both [OpenInference](https://github.com/Arize-ai/openinference/pull/3761) and [OpenLLMetry](https://github.com/traceloop/openllmetry/pull/4478), because the answer arrives as a list of chunks that neither instrumentor expected.
+
+Before that, the emulators. Checking the emulator against [Timendus' CHIP-8 test suite](https://github.com/Timendus/chip8-test-suite) meant asking whether the suite could actually fail, so I broke instructions on purpose and watched which tests stayed quiet. Three bugs got through it. All three are now patches there, each one holding the screen pixel for pixel identical on a correct interpreter: [#35](https://github.com/Timendus/chip8-test-suite/pull/35), [#36](https://github.com/Timendus/chip8-test-suite/pull/36), [#37](https://github.com/Timendus/chip8-test-suite/pull/37).
+
+The same reading of programs found bugs in two other emulators, [kiwi-8](https://github.com/Diesel-Net/kiwi-8/pull/79) and [jaxe](https://github.com/kurtjd/jaxe/pull/29), each fixed with a headless harness around the real core so the fix could be checked against the suite. Fifteen more emulators went through the same harness in a day; the same handful of mistakes came up in most of them, and the fixes are open or merged across them. For the CHIP-8 community archive, a one-line [.gitattributes](https://github.com/JohnEarnest/chip8Archive/pull/37) that stops it reporting itself as 99% Roff, and [how-to-play notes for fifty four of its programs](https://github.com/JohnEarnest/chip8Archive/pull/39), written by playing them; both merged by John Earnest, the author of Octo and the archive.
 
 ### Elsewhere
 
