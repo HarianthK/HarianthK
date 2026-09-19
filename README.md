@@ -40,7 +40,7 @@ I build retrieval systems that turn unstructured data into something production 
 
 ### Upstream
 
-Thirty pull requests to twenty six maintainers in a week, six merged so far, each one a bug proved with a program before it was sent; [Upstream](https://upstream-prs.vercel.app/?user=HarianthK) keeps the live list.
+Thirty two pull requests to twenty eight maintainers in ten days, seven merged so far, each one a bug proved with a program before it was sent; [Upstream](https://upstream-prs.vercel.app/?user=HarianthK) keeps the live list.
 
 The most recent are in LLM observability, the tools around Arize's Phoenix: the Groq instrumentor in [OpenInference](https://github.com/Arize-ai/openinference/pull/3754) was dropping the reasoning that Groq's reasoning models return and their token details (merged the same day, the maintainer extended the branch himself before merging), and Mistral's reasoning models were losing their whole answer in both [OpenInference](https://github.com/Arize-ai/openinference/pull/3761) and [OpenLLMetry](https://github.com/traceloop/openllmetry/pull/4478), because the answer arrives as a list of chunks that neither instrumentor expected.
 
